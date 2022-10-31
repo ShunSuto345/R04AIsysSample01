@@ -10,7 +10,7 @@
 <body>
 <h1>Sentimentを使うサイト</h1>
 
-<h3>英文を入力してください</h3>
+<h3>文章を入力してください</h3>
 <form method="POST" action="./sentimentresult">
 <input type="TEXT" name="string" />
 <input type="submit" />

@@ -1,6 +1,7 @@
 package jp.jc21.t.yoshizawa.WEB01;
 
 import java.io.IOException;
+import java.net.InetSocketAddress;
 import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.Map;
@@ -46,9 +47,9 @@ public class Sentiment {
 
 		String jsonData = new Gson().toJson(src);
 
-		//InetSocketAddress proxy = new InetSocketAddress("172.17.0.2", 80);
+		InetSocketAddress proxy = new InetSocketAddress("172.17.0.2", 80);
 
-		JsonReader reader = WebApiConnector.postJsonReader(url,  map, jsonData);
+		JsonReader reader = WebApiConnector.postJsonReader(url,proxy,  map, jsonData);
 		Language1 message = null;
 		if (reader != null) {
 			message = gson.fromJson(reader, Language1.class);
